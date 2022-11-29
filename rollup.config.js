@@ -1,4 +1,4 @@
-import serve from 'rollup-plugin-serve'
+import serve from 'rollup-plugin-serve';
 
 export default {
   input: 'src/index.js',

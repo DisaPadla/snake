@@ -6,10 +6,242 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Snake</title>
+
+  <style>
+      body {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          background: #2b2b2b;
+          font-family: monospace;
+          color: #878787;
+      }
+
+      .row {
+          width: 100%;
+          padding: 15px;
+      }
+
+      .center-block {
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .center-text {
+          text-align: center;
+      }
+
+      .playground {
+          display: table;
+          width: 300px;
+      }
+
+      .playground > * {
+          display: table-row;
+      }
+
+      .playground-cell {
+          display: table-cell;
+          width: 28px;
+          height: 28px;
+          border: 1px solid #878787;
+          border-bottom: none;
+          border-right: none;
+          position: relative;
+      }
+
+      .playground-cell:last-child {
+          border-right: 1px solid #878787;
+      }
+
+      .playground-row:last-child > .playground-cell {
+          border-bottom:  1px solid #878787;;
+      }
+
+      .playground-cell-item {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 2px;
+          left: 2px;
+          background: none;
+      }
+
+      .playground-cell-item:hover {
+          background: #a2a2a2;
+      }
+
+      .square {
+          background: #878787;
+      }
+
+      .circle {
+          border-radius: 50%;
+          background: #878787;
+      }
+
+      .square-rounded {
+          border-radius: 4px;
+          background: #878787;
+      }
+
+      .separator {
+          margin: 0 15px;
+          border-top: 1px dashed #878787;
+      }
+
+      .info {
+          margin-top: 0;
+          margin-bottom: 0;
+          width: 300px;
+      }
+  </style>
 </head>
 <body>
 
-<div>app</div>
+<div class="row">
+  <div id="playground" class="playground center-block">
+    <div class="playground-row">
+      <div class="playground-cell">
+        <div class="playground-cell-item"></div>
+      </div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+    <div class="playground-row">
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+      <div class="playground-cell"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="center-text">
+    <button id="btn-start">Start</button>
+    <button id="btn-stop">Stop</button>
+    <button id="btn-pause">Pause</button>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<div class="row">
+  <pre id="txt-info" class="info center-block">
+Status: started
+Points: 15
+  </pre>
+</div>
 
 </body>
 </html>
